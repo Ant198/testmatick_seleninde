@@ -10,26 +10,26 @@ import java.util.List;
 import java.util.Map;
 
 public class BooksList {
-    private Map<String, Object> bookInfo;
-    private List<Object> booksInfoList;
+    private Map<String, String> bookInfo;
+    private List<Map<String, String>> booksInfoList;
 
     public BooksList() {
         this.bookInfo = new HashMap<>();
         this.booksInfoList = new ArrayList<>();
     }
 
-    public <T> void putBookInfo(String key, T value) {
+    public <T> void putBookInfo(String key, String value) {
         bookInfo.put(key, value);
     }
 
-    public Object getBookInfo() {
+    public Map<String, String> getBookInfo() {
         return bookInfo;
     }
 
-    public void setBooksInfoList(Object bookInfo ) {
+    public void setBooksInfoList(Map<String, String> bookInfo ) {
         booksInfoList.add(bookInfo);
     }
-    public List<Object> getBooksInfoList() {
+    public List<Map<String, String>> getBooksInfoList() {
         return booksInfoList;
     }
 
@@ -52,7 +52,6 @@ public class BooksList {
             putBookInfo("auther", authorBook);
 
             priceBook = book.$$(By.className("a-offscreen")).texts().get(0);
-            System.out.println(priceBook);
             putBookInfo("price", priceBook);
 
             isBestSeller = book.$(By.className("a-badge-text")).exists();
@@ -64,6 +63,8 @@ public class BooksList {
 
             setBooksInfoList(getBookInfo());
         }
+
+
     }
     
 }
