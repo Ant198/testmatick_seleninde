@@ -17,11 +17,6 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class AmazonResultPage {
     ElementsCollection books;
-    private List<String> name = new ArrayList<>();
-    private List<String> author = new ArrayList<>();
-    private List<String> price = new ArrayList<>();
-    private boolean isBestSeller;
-    ElementsCollection bookCollection;
 
     public ElementsCollection getBooks() {
         System.out.println();

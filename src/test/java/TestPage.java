@@ -43,43 +43,7 @@ public class TestPage {
         BooksList booksList = new BooksList();
         books = resultsPage.getBooks();
 
-        System.out.println(books.size());
-
-        for(SelenideElement book : books) {
-            String authorBook = "";
-            String priceBook = "";
-            boolean isBestSeller = false;
-            String nameBook = book.find(By.xpath(".//h2"))
-                    .find(By.xpath(".//span"))
-                    .text();
-            booksList.putBookInfo("name", nameBook);
-            System.out.println(nameBook);
-
-            ElementsCollection elements = book.$$(By.className("a-size-base"));
-            for (int i = 0; i < elements.size(); i++) {
-                if (elements.get(i).getText().equals("by")) {
-                    authorBook = elements.get(i + 1).text();
-                    break;
-                }
-            }
-            System.out.println(authorBook);
-            booksList.putBookInfo("auther", authorBook);
-
-            priceBook = book.$$(By.className("a-offscreen")).texts().get(0);
-            System.out.println(priceBook);
-            booksList.putBookInfo("price", priceBook);
-
-            isBestSeller = book.$(By.className("a-badge-text")).exists();
-            if (isBestSeller) {
-                booksList.putBookInfo("best seller", "yes");
-            } else {
-                booksList.putBookInfo("best seller", "no");
-            }
-
-            System.out.println(isBestSeller);
-
-            booksList.setBooksInfoList(booksList.getBookInfo());
-        }
-        System.out.println(booksList.getBooksInfoList().size());
+        //Save Book Information
+        booksList.saveBookInfo(books);
     }
 }
