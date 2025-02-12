@@ -10,7 +10,7 @@ import pages.AmazonResultPage;
 import pages.AmazonSearchPage;
 import storage.BooksList;
 
-public class TestPage extends BaseTest {
+public class AmazonBookSearchAndVerificationTest extends BaseTest {
     ElementsCollection books;
     BooksList booksList;
     AmazonBookInfoPage bookInfo;
