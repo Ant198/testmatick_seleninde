@@ -1,15 +1,13 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import config.BasePage;
 import org.openqa.selenium.By;
-
-import java.time.Duration;
 
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Condition.*;
 
-public class AmazonSearchPage {
+public class AmazonSearchPage extends BasePage {
     private final SelenideElement searchField = $(By.id("searchDropdownBox"));
 
     public void setFilter() {
