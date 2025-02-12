@@ -35,11 +35,9 @@ public class AmazonBookSearchAndVerificationTest extends BaseTest {
         booksList.saveBookInfo(books);
 
         AmazonBookInfoPage bookInfoPage = open(bookPageUrl, AmazonBookInfoPage.class);
-
         bookInfoPage.setPageTitle();
         bookInfoPage.setBookInfo();
-        System.out.println(booksList.getBooksList());
-        System.out.println(bookInfoPage.getBook());
+
         Assert.assertEquals(basePageUrl, searchPage.getPageUrl(), "wrong url");
         Assert.assertFalse(searchPage.getPageTitle().equals(resultsPage.getPageTitle()), "wrong title");
         Assert.assertFalse(resultsPage.getPageTitle().equals(bookInfoPage.getPageTitle()), "wrong title");
