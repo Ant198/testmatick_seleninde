@@ -12,8 +12,6 @@ pipeline {
 
                 step([$class: 'TestNGResultsPublisher', testResults: 'target/surefire-reports/testng-results.xml'])
 
-
-                archiveArtifacts artifacts: 'target/surefire-reports/testng-results.xml', allowEmptyArchive: true
             }
         }
 }
