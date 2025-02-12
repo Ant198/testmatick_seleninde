@@ -8,12 +8,7 @@ import static com.codeborne.selenide.Selenide.title;
 public abstract class BasePage {
     private String pageTitle;
     private String pageUrl;
-    /*
-    public BasePage(String title, String url) {
-        this.curTitle = title;
-        this.curUrl = url;
-    }
-    */
+
     public String getPageTitle() {
         return pageTitle;
     }
