@@ -9,9 +9,7 @@ pipeline {
     }
     post {
             always {
-
-                step([$class: 'TestNGResultsPublisher', testResults: 'target/surefire-reports/testng-results.xml'])
-
+                testNG()
             }
         }
 }
