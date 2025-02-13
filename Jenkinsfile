@@ -9,7 +9,7 @@ pipeline {
 
        stage('Publish TestNG Report') {
             steps{
-                publish TestNG testResultPattern: '**/test-output/testng-results.xml', escapeTestDescp: true, escapeExceptionMsg: true
+                publishTestNG testResultPattern: '**/test-output/testng-results.xml', escapeTestDescp: true, escapeExceptionMsg: true
             }
        }
     }
