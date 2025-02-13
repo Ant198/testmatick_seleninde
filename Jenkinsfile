@@ -1,9 +1,9 @@
 pipeline {
-    agent any
+    agent {label 'Windows'}
     stages {
        stage('Run the test') {
             steps {
-                bat 'mvn clean test'
+                sh 'mvn clean test'
             }
        }
 
@@ -11,10 +11,9 @@ pipeline {
     }
     post {
         always {
-          testNG()
+          junit 'target/surefire-reports/*.xml'
         }
-      }
-
+    }
 }
 
 
