@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent {label 'Windows'}
     stages {
        stage('Run the test') {
             steps {
@@ -7,15 +7,11 @@ pipeline {
             }
        }
 
-       stage('Publish TestNG Report') {
-            steps{
-                publishTestNG testResultPattern: '**/target/surefire-reports/testng-results.xml'
-            }
-       }
+
     }
     post {
         always {
-          testNG()
+          junit 'target/surefire-reports/*.xml'
         }
     }
 }
