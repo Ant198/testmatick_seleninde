@@ -23,9 +23,17 @@ pipeline {
             }
         }
 
-    post {
-        always {
-            testNG()
+        stage('Publish TestNG Report') {
+            steps {
+                publishTestNGResults testResultsPattern: "${TESTNG_RESULTS}"
+            }
         }
+    }
+
+    post {
+
+        always {
+              testNG()
+            }
     }
 }
