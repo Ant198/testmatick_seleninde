@@ -11,15 +11,9 @@ pipeline {
         always {
           testNG()
         }
-      }
-}
-    }
-
-    post {
-
-        always {
-              testNG()
-        }
     }
 }
+
+
+
 
