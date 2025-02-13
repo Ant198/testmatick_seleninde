@@ -1,5 +1,5 @@
 pipeline {
-    agent {label 'Windows'}
+    agent any
     stages {
        stage('Run the test') {
             steps {
@@ -11,9 +11,10 @@ pipeline {
     }
     post {
         always {
-          junit 'target/surefire-reports/*.xml'
+          testNG()
         }
-    }
+      }
+
 }
 
 
