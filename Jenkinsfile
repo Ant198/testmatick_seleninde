@@ -6,12 +6,10 @@ pipeline {
                 sh 'mvn clean test'
             }
        }
-        post {
-            always {
-              testNG()
-            }
-          }
-
+    post {
+        always {
+            testNG()
+       }
     }
 
 }
