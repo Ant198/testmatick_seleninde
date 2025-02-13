@@ -1,5 +1,5 @@
 pipeline {
-    agent {label 'Windows'}
+    agent {label 'windows'}
     stages {
        stage('Run the test') {
             steps {
