@@ -7,7 +7,6 @@ pipeline {
 
     environment {
         GIT_REPO = 'https://github.com/Ant198/testmatick_seleninde.git'
-        TESTNG_RESULTS = 'target/surefire-reports/testng-results.xml'
     }
 
     stages {
@@ -17,23 +16,19 @@ pipeline {
             }
         }
 
-        stage('Build & Test') {
+        stage('Run the test') {
             steps {
                 bat 'mvn clean test'
             }
         }
 
-        stage('Publish TestNG Report') {
-            steps {
-                publishTestNGResults testResultsPattern: "${TESTNG_RESULTS}"
-            }
-        }
     }
 
     post {
 
         always {
               testNG()
-            }
+        }
     }
 }
+
