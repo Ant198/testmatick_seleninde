@@ -23,22 +23,9 @@ pipeline {
             }
         }
 
-        stage('Publish TestNG Report') {
-            steps {
-                publishTestNGResults testResultsPattern: "${TESTNG_RESULTS}"
-            }
-        }
-    }
-
     post {
-        success {
-            echo '✅ Tests passed successfully!'
-        }
-        failure {
-            echo '❌ Tests failed!'
-            mail to: 'your@email.com',
-                 subject: 'Jenkins Build Failed',
-                 body: 'Build failed. Check Jenkins for details.'
+        always {
+            testNG()
         }
     }
 }
