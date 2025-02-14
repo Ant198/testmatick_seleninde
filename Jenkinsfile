@@ -4,15 +4,15 @@ pipeline {
             maven 'maven'
         }
     stages {
-       stage('Run the test') {
+       stage('test') {
             steps {
-                bat 'mvn clean test'
+                bat 'mvn test'
             }
        }
     }
     post {
         always {
-            testNG()
+            testNG('target/surefire-reports/*.xml')
        }
     }
 
