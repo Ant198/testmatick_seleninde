@@ -20,7 +20,6 @@ public class AmazonBookInfoPage extends BasePage {
         name = $(By.id("productTitle")).text();
         author = $(By.id("bylineInfo")).$$("span").get(0).$("a").text();
         price = $("#tmm-grid-swatch-PAPERBACK").$(".slot-price").$("span").text();
-        System.out.println($(By.className("a-badge-text")).exists());
         if ($("#zeitgeistBadge_feature_div").exists()) {
             bestSeller = "yes";
         } else {

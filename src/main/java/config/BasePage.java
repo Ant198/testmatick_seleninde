@@ -1,7 +1,6 @@
 package config;
 
 import com.codeborne.selenide.WebDriverRunner;
-import org.openqa.selenium.WebDriver;
 
 import static com.codeborne.selenide.Selenide.title;
 

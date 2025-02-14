@@ -1,5 +1,7 @@
-import static com.codeborne.selenide.Selenide.*;
+package testPages;
 
+import static com.codeborne.selenide.Selectors.byId;
+import static com.codeborne.selenide.Selenide.*;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.ElementsCollection;
 import config.BaseTest;
@@ -39,6 +41,7 @@ public class AmazonBookSearchAndVerificationTest extends BaseTest {
         bookInfoPage.setBookInfo();
 
         Assert.assertEquals(basePageUrl, searchPage.getPageUrl(), "wrong url");
+        Assert.assertTrue($(byId("searchDropdownBox")).exists());
         Assert.assertFalse(searchPage.getPageTitle().equals(resultsPage.getPageTitle()), "wrong title");
         Assert.assertFalse(resultsPage.getPageTitle().equals(bookInfoPage.getPageTitle()), "wrong title");
         Assert.assertTrue(booksList.getBooksList().contains(bookInfoPage.getBook()), "book not exist");
