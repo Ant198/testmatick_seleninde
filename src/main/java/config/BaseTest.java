@@ -12,9 +12,9 @@ public class BaseTest {
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         Configuration.browser = "chrome";
-        Configuration.headless = false;
+        Configuration.headless = true;
         Configuration.timeout = 30000;
-       // open("https://www.amazon.com/");
+        open("https://www.amazon.com/");
     }
 
 }
