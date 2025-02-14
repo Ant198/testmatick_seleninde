@@ -4,6 +4,7 @@ import static com.codeborne.selenide.Selectors.byId;
 import static com.codeborne.selenide.Selenide.*;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.ElementsCollection;
+import com.codeborne.selenide.Selenide;
 import config.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -24,6 +25,7 @@ public class AmazonBookSearchAndVerificationTest extends BaseTest {
 */
     @Test
     public void test() {
+        Selenide.screenshot("before_searchDropdownBox");
         booksList = new BooksList();
         AmazonSearchPage searchPage = new AmazonSearchPage();
         searchPage.setPageUrl();
