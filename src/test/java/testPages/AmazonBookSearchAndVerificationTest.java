@@ -25,7 +25,8 @@ public class AmazonBookSearchAndVerificationTest extends BaseTest {
     @Test
     public void test() {
         booksList = new BooksList();
-        AmazonSearchPage searchPage = new AmazonSearchPage();
+        AmazonSearchPage searchPage = open(basePageUrl, AmazonSearchPage.class);
+        // AmazonSearchPage searchPage = new AmazonSearchPage();
         searchPage.setPageUrl();
         searchPage.setPageTitle();
         searchPage.setFilter();
