@@ -12,7 +12,7 @@ pipeline {
     }
     post {
         always {
-            testNG('target/surefire-reports/*.xml')
+            testNG()
        }
     }
 
