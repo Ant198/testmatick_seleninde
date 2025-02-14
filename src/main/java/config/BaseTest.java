@@ -14,7 +14,7 @@ public class BaseTest {
         Configuration.browser = "chrome";
         Configuration.headless = false;
         Configuration.timeout = 30000;
-        open("https://www.amazon.com/");
+       // open("https://www.amazon.com/");
     }
 
 }

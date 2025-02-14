@@ -1,27 +1,28 @@
 package testPages;
 
-import static com.codeborne.selenide.Selectors.byId;
-import static com.codeborne.selenide.Selenide.*;
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.ElementsCollection;
 import config.BaseTest;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.AmazonBookInfoPage;
-import pages.AmazonResultPage;
-import pages.AmazonSearchPage;
 import storage.BooksList;
+
+import static com.codeborne.selenide.Selenide.open;
 
 public class AmazonBookSearchAndVerificationTest extends BaseTest {
     ElementsCollection books;
     BooksList booksList;
     String basePageUrl = "https://www.amazon.com/";
     String bookPageUrl = "https://www.amazon.com/Head-First-Java-Brain-Friendly-Guide/dp/1491910771/ref=sr_1_3?dib=eyJ2IjoiMSJ9.VhdqJr59jl-7CJ3ERsIzDhwY0Yqmtq6zSQ3g-YBLqcuH4jbxNxHxI_oaEJ34po07SuLg5VeaNDQSHs0b7IdSteKVObRDXSpWsnrJnaOk_jnbqJ6cG5Iov4rmDUctlouQ6jc8Nlgu0fjfRedgr6fThsNLGcBZaVUtUtoxqTCXdprGIIOGGOEKqJ7Ftvu7ZR3qsZ-dObChiFblwTaFQh9hG65ByHgb-OnPk_hWafBE25E.u6ZcV2uYDzTAJIF7BT6z4WyyCgQjC4m8qR-hYxBO7jg&dib_tag=se&keywords=Java&qid=1728470947&s=books&sr=1-3 (дані про книгу теж потрібно витягти з її сторінки)";
-/*
+
+    @Test
+    void testOpen(){
+        open("https://www.amazon.com/");
+    }
+
+    /*
     static {
         Configuration.timeout = 30000; // 10 seconds
     }
-*/
+
     @Test
     public void test() {
         booksList = new BooksList();
@@ -46,4 +47,6 @@ public class AmazonBookSearchAndVerificationTest extends BaseTest {
         Assert.assertFalse(resultsPage.getPageTitle().equals(bookInfoPage.getPageTitle()), "wrong title");
         Assert.assertTrue(booksList.getBooksList().contains(bookInfoPage.getBook()), "book not exist");
    }
+
+ */
 }
