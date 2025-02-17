@@ -1,9 +1,7 @@
 package pages;
 
 import config.BasePage;
-import storage.Book;
 import org.openqa.selenium.By;
-import java.util.Map;
 import static com.codeborne.selenide.Selenide.$;
 
 public class AmazonBookInfoPage extends BasePage {
@@ -11,10 +9,6 @@ public class AmazonBookInfoPage extends BasePage {
     String author;
     String price;
     String bestSeller;
-
-    public Map<String, String> getBook() {
-        return new Book(name, author, price, bestSeller).getBook();
-    }
 
     public void setBookInfo() {
         name = $(By.id("productTitle")).text();
@@ -27,5 +21,20 @@ public class AmazonBookInfoPage extends BasePage {
         }
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public String getBestSeller() {
+        return bestSeller;
+    }
 
 }
