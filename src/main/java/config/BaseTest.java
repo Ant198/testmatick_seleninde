@@ -12,7 +12,6 @@ public class BaseTest {
     @BeforeMethod
     public void setUp() {
         WebDriverManager.chromedriver().setup();
-        //Configuration.browserCapabilities = new ChromeOptions().addArguments("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36");
         Configuration.browser = "chrome";
         Configuration.headless = false;
         Configuration.timeout = 30000;

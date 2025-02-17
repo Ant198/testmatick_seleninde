@@ -17,7 +17,6 @@ public abstract class BasePage {
     public String getPageUrl() {
         return pageUrl;
     }
-
     public void setPageUrl() {
         pageUrl = WebDriverRunner.url();
     }
