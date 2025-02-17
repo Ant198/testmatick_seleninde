@@ -1,6 +1,10 @@
 pipeline {
      agent any
 
+     tools{
+        maven
+     }
+
     stages {
        stage('test') {
             steps {
